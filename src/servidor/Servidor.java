@@ -1,11 +1,11 @@
 package servidor;
 
-import java.io.IOException;
+import comum.Pessoa;
+import comum.PStream;
+
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-
-import comum.PStream;
-import comum.Pessoa;
 
 public class Servidor {
     public static void main(String[] args) {
@@ -18,8 +18,8 @@ public class Servidor {
                 System.out.println("Cliente conectado: " + clienteSocket.getInetAddress());
 
                 Pessoa[] pessoas = {
-                    new Pessoa("Jarbas", "123.456.789-00", 30),
-                    new Pessoa("Grazy", "987.654.321-00", 25)
+                    new Pessoa("Jarbas", "123.456.789-00", 40),
+                    new Pessoa("Grazy", "987.654.321-00", 19)
                 };
 
                 try (PStream pStream = new PStream(pessoas, clienteSocket.getOutputStream())) {
